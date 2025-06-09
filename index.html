@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HOMELO - Premium Real Estate</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <a href="index.html"><img src="https://ik.imagekit.io/6ghr1qaq4q/Imagini/logo-hero-mainasd.png?updatedAt=1749339655513" alt="HOMELO Logo" style="height: 36px;"></a>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="index.html" class="nav-link active">Home</a></li>
+                <li><a href="properties.html" class="nav-link">Properties</a></li>
+                <li><a href="about.html" class="nav-link">About</a></li>
+                <li><a href="services.html" class="nav-link">Services</a></li>
+                <li><a href="agents.html" class="nav-link">Agents</a></li>
+                <li><a href="contact.html" class="nav-link">Contact</a></li>
+                <li><a href="#" class="cart-btn favorites-btn" onclick="toggleSidebar('favorites')">
+                    <i class="fas fa-heart"></i>
+                    <span class="cart-count" id="favoritesCount">0</span>
+                </a></li>
+                <li><a href="#" class="cart-btn shopping-cart-btn" onclick="toggleSidebar('cart')">
+                    <i class="fas fa-shopping-cart"></i>
+                    <span class="cart-count" id="cartCount">0</span>
+                </a></li>
+            </ul>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <div class="hero-text">
+                <h1>Find Your Dream Home</h1>
+                <p>Discover exceptional properties in the most beautiful locations</p>
+                <div class="search-container">
+                    <div class="search-bar">
+                        <div class="search-group">
+                            <label>Location</label>
+                            <input type="text" placeholder="Enter location..." id="searchInput">
+                        </div>
+                        <div class="search-group">
+                            <label>Type</label>
+                            <select id="typeFilter">
+                                <option value="all">All Types</option>
+                                <option value="villa">Villa</option>
+                                <option value="apartment">Apartment</option>
+                                <option value="house">House</option>
+                            </select>
+                        </div>
+                        <div class="search-group">
+                            <label>Price Range</label>
+                            <select id="priceFilter">
+                                <option value="all">All Prices</option>
+                                <option value="0-200000">€0 - €200,000</option>
+                                <option value="200000-500000">€200,000 - €500,000</option>
+                                <option value="500000-1000000">€500,000 - €1M</option>
+                                <option value="1000000+">€1M+</option>
+                            </select>
+                        </div>
+                        <button class="search-btn" onclick="window.location.href='properties.html'">
+                            <i class="fas fa-search"></i>
+                            Search Properties
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="hero-stats">
+            <div class="stat-item">
+                <h3>500+</h3>
+                <p>Properties Sold</p>
+            </div>
+            <div class="stat-item">
+                <h3>98%</h3>
+                <p>Happy Clients</p>
+            </div>
+            <div class="stat-item">
+                <h3>15+</h3>
+                <p>Years Experience</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="quick-access-section" style="padding: 80px 0; background: var(--bg-light);">
+        <div class="container">
+            <div class="section-header">
+                <h2>Explore Our Services</h2>
+                <p>Everything you need for your real estate journey</p>
+            </div>
+            <div class="quick-access-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem;">
+                <a href="properties.html" class="quick-access-card" style="background: var(--bg-white); padding: 2rem; border-radius: 12px; text-decoration: none; text-align: center; border: 1px solid var(--border-light); transition: var(--transition);">
+                    <div style="width: 60px; height: 60px; background: #5E6C5B; border-radius: 12px; display: flex; align-items: center; justify-content: center; margin: 0 auto 1rem; color: white; font-size: 1.5rem;">
+                        <i class="fas fa-home"></i>
+                    </div>
+                    <h3 style="color: var(--text-dark); margin-bottom: 0.5rem;">View Properties</h3>
+                    <p style="color: var(--text-light);">Browse our extensive collection of premium properties</p>
+                </a>
+                <a href="services.html" class="quick-access-card" style="background: var(--bg-white); padding: 2rem; border-radius: 12px; text-decoration: none; text-align: center; border: 1px solid var(--border-light); transition: var(--transition);">
+                    <div style="width: 60px; height: 60px; background: #5E6C5B; border-radius: 12px; display: flex; align-items: center; justify-content: center; margin: 0 auto 1rem; color: white; font-size: 1.5rem;">
+                        <i class="fas fa-handshake"></i>
+                    </div>
+                    <h3 style="color: var(--text-dark); margin-bottom: 0.5rem;">Our Services</h3>
+                    <p style="color: var(--text-light);">Comprehensive real estate solutions for all your needs</p>
+                </a>
+                <a href="agents.html" class="quick-access-card" style="background: var(--bg-white); padding: 2rem; border-radius: 12px; text-decoration: none; text-align: center; border: 1px solid var(--border-light); transition: var(--transition);">
+                    <div style="width: 60px; height: 60px; background: #5E6C5B; border-radius: 12px; display: flex; align-items: center; justify-content: center; margin: 0 auto 1rem; color: white; font-size: 1.5rem;">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <h3 style="color: var(--text-dark); margin-bottom: 0.5rem;">Meet Our Agents</h3>
+                    <p style="color: var(--text-light);">Connect with our experienced real estate professionals</p>
+                </a>
+                <a href="contact.html" class="quick-access-card" style="background: var(--bg-white); padding: 2rem; border-radius: 12px; text-decoration: none; text-align: center; border: 1px solid var(--border-light); transition: var(--transition);">
+                    <div style="width: 60px; height: 60px; background: #5E6C5B; border-radius: 12px; display: flex; align-items: center; justify-content: center; margin: 0 auto 1rem; color: white; font-size: 1.5rem;">
+                        <i class="fas fa-envelope"></i>
+                    </div>
+                    <h3 style="color: var(--text-dark); margin-bottom: 0.5rem;">Get in Touch</h3>
+                    <p style="color: var(--text-light);">Contact us for personalized assistance</p>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>HOMELO</h3>
+                    <p>Your trusted partner in finding the perfect home.</p>
+                    <div class="social-links">
+                        <a href="404.html"><i class="fab fa-facebook"></i></a>
+                        <a href="404.html"><i class="fab fa-instagram"></i></a>
+                        <a href="404.html"><i class="fab fa-twitter"></i></a>
+                        <a href="404.html"><i class="fab fa-linkedin"></i></a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="properties.html">Properties</a></li>
+                        <li><a href="services.html">Services</a></li>
+                        <li><a href="agents.html">Agents</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Services</h4>
+                    <ul>
+                        <li><a href="services.html">Property Sales</a></li>
+                        <li><a href="services.html">Property Rental</a></li>
+                        <li><a href="services.html">Property Valuation</a></li>
+                        <li><a href="services.html">Investment Consulting</a></li>
+                        <li><a href="services.html">Property Management</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Contact Info</h4>
+                    <ul>
+                        <li><i class="fas fa-map-marker-alt"></i> 123 Property Street, Bucharest</li>
+                        <li><i class="fas fa-phone"></i> +40 123 456 789</li>
+                        <li><i class="fas fa-envelope"></i> contact@homelo.com</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 HOMELO. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <div class="favorites-sidebar" id="favoritesSidebar">
+        <div class="sidebar-header">
+            <h3>Favorite Properties</h3>
+            <button class="close-sidebar" onclick="toggleSidebar('favorites')">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+        <div class="favorites-items" id="favoritesItems">
+        </div>
+        <div class="sidebar-footer">
+            <div class="favorites-total">
+                <h4>Total Value: <span id="favoritesTotal">€0</span></h4>
+            </div>
+            <button class="contact-agent-btn" onclick="contactAboutFavorites()">
+                Contact Agent
+            </button>
+        </div>
+    </div>
+
+    <div class="shopping-cart-sidebar" id="shoppingCartSidebar">
+        <div class="sidebar-header">
+            <h3>Shopping Cart</h3>
+            <button class="close-sidebar" onclick="toggleSidebar('cart')">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+        <div class="shopping-items" id="shoppingItems">
+        </div>
+        <div class="sidebar-footer">
+            <div class="shopping-total">
+                <h4>Total Value: <span id="shoppingTotal">€0</span></h4>
+            </div>
+            <button class="checkout-btn" onclick="proceedToCheckout()">
+                <i class="fas fa-credit-card"></i> Proceed to Checkout
+            </button>
+        </div>
+    </div>
+
+    <div class="modal" id="propertyModal">
+        <div class="modal-content">
+            <span class="close-modal" onclick="closeModal()">&times;</span>
+            <div id="modalContent">
+            </div>
+        </div>
+    </div>
+
+    <script src="properties.js"></script>
+    <script src="script.js"></script>
+</body>
+</html> 

@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Services - HOMELO Real Estate</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <a href="index.html"><img src="https://ik.imagekit.io/6ghr1qaq4q/Imagini/logo-hero-mainasd.png?updatedAt=1749339655513" alt="HOMELO Logo" style="height: 36px;"></a>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="index.html" class="nav-link">Home</a></li>
+                <li><a href="properties.html" class="nav-link">Properties</a></li>
+                <li><a href="about.html" class="nav-link">About</a></li>
+                <li><a href="services.html" class="nav-link active">Services</a></li>
+                <li><a href="agents.html" class="nav-link">Agents</a></li>
+                <li><a href="contact.html" class="nav-link">Contact</a></li>
+                <li><a href="#" class="cart-btn favorites-btn" onclick="toggleSidebar('favorites')">
+                    <i class="fas fa-heart"></i>
+                    <span class="cart-count" id="favoritesCount">0</span>
+                </a></li>
+                <li><a href="#" class="cart-btn shopping-cart-btn" onclick="toggleSidebar('cart')">
+                    <i class="fas fa-shopping-cart"></i>
+                    <span class="cart-count" id="cartCount">0</span>
+                </a></li>
+            </ul>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <section class="page-header" style="margin-top: 80px; padding: 80px 0; background: var(--bg-light); text-align: center;">
+        <div class="container">
+            <h1 style="font-size: 3rem; margin-bottom: 1rem; color: var(--text-dark);">Our Services</h1>
+            <p style="font-size: 1.2rem; color: var(--text-light); max-width: 600px; margin: 0 auto;">Comprehensive real estate solutions tailored to your unique needs and goals</p>
+        </div>
+    </section>
+
+    <section class="services-section" style="padding: 80px 0; background: var(--bg-white);">
+        <div class="container">
+            <div class="services-grid">
+                <div class="service-card" style="background: var(--bg-white); padding: 3rem; border-radius: 12px; text-align: center; border: 1px solid var(--border-light); transition: var(--transition); box-shadow: var(--shadow-sm);">
+                    <div class="service-icon" style="width: 80px; height: 80px; background: #5E6C5B; border-radius: 12px; display: flex; align-items: center; justify-content: center; margin: 0 auto 2rem; font-size: 2rem; color: white;">
+                        <i class="fas fa-home"></i>
+                    </div>
+                    <h3 style="color: var(--text-dark); margin-bottom: 1rem;">Property Sales</h3>
+                    <p style="color: var(--text-light); margin-bottom: 1.5rem; line-height: 1.6;">Expert guidance through every step of buying or selling your property. We handle negotiations, paperwork, and ensure smooth transactions.</p>
+                    <ul style="text-align: left; color: var(--text-light); margin-bottom: 2rem;">
+                        <li>Market Analysis & Pricing</li>
+                        <li>Professional Photography</li>
+                        <li>Marketing & Advertising</li>
+                        <li>Negotiation Support</li>
+                        <li>Legal Documentation</li>
+                    </ul>
+                    <a href="contact.html" style="background: var(--text-dark); color: white; padding: 12px 24px; border-radius: 8px; text-decoration: none; font-weight: 500;">Learn More</a>
+                </div>
+
+                <div class="service-card" style="background: var(--bg-white); padding: 3rem; border-radius: 12px; text-align: center; border: 1px solid var(--border-light); transition: var(--transition); box-shadow: var(--shadow-sm);">
+                    <div class="service-icon" style="width: 80px; height: 80px; background: #5E6C5B; border-radius: 12px; display: flex; align-items: center; justify-content: center; margin: 0 auto 2rem; font-size: 2rem; color: white;">
+                        <i class="fas fa-key"></i>
+                    </div>
+                    <h3 style="color: var(--text-dark); margin-bottom: 1rem;">Property Rental</h3>
+                    <p style="color: var(--text-light); margin-bottom: 1.5rem; line-height: 1.6;">Find the perfect rental property or maximize your rental income with our comprehensive rental management services.</p>
+                    <ul style="text-align: left; color: var(--text-light); margin-bottom: 2rem;">
+                        <li>Tenant Screening</li>
+                        <li>Rental Management</li>
+                        <li>Maintenance Coordination</li>
+                        <li>Rent Collection</li>
+                        <li>Legal Compliance</li>
+                    </ul>
+                    <a href="contact.html" style="background: #000; color: white; padding: 12px 24px; border-radius: 8px; text-decoration: none; font-weight: 500;">Learn More</a>
+                </div>
+
+                <div class="service-card" style="background: var(--bg-white); padding: 3rem; border-radius: 12px; text-align: center; border: 1px solid var(--border-light); transition: var(--transition); box-shadow: var(--shadow-sm);">
+                    <div class="service-icon" style="width: 80px; height: 80px; background: #5E6C5B; border-radius: 12px; display: flex; align-items: center; justify-content: center; margin: 0 auto 2rem; font-size: 2rem; color: white;">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <h3 style="color: var(--text-dark); margin-bottom: 1rem;">Property Valuation</h3>
+                    <p style="color: var(--text-light); margin-bottom: 1.5rem; line-height: 1.6;">Accurate property valuations based on current market conditions, comparable sales, and professional analysis.</p>
+                    <ul style="text-align: left; color: var(--text-light); margin-bottom: 2rem;">
+                        <li>Comparative Market Analysis</li>
+                        <li>Property Inspection</li>
+                        <li>Market Trend Analysis</li>
+                        <li>Detailed Reports</li>
+                        <li>Investment Potential</li>
+                    </ul>
+                    <a href="contact.html" style="background: #000; color: white; padding: 12px 24px; border-radius: 8px; text-decoration: none; font-weight: 500;">Learn More</a>
+                </div>
+
+                <div class="service-card" style="background: var(--bg-white); padding: 3rem; border-radius: 12px; text-align: center; border: 1px solid var(--border-light); transition: var(--transition); box-shadow: var(--shadow-sm);">
+                    <div class="service-icon" style="width: 80px; height: 80px; background: #5E6C5B; border-radius: 12px; display: flex; align-items: center; justify-content: center; margin: 0 auto 2rem; font-size: 2rem; color: white;">
+                        <i class="fas fa-handshake"></i>
+                    </div>
+                    <h3 style="color: var(--text-dark); margin-bottom: 1rem;">Investment Consulting</h3>
+                    <p style="color: var(--text-light); margin-bottom: 1.5rem; line-height: 1.6;">Strategic advice for property investment opportunities to maximize your returns and build long-term wealth.</p>
+                    <ul style="text-align: left; color: var(--text-light); margin-bottom: 2rem;">
+                        <li>Investment Strategy</li>
+                        <li>Portfolio Analysis</li>
+                        <li>ROI Calculations</li>
+                        <li>Market Forecasting</li>
+                        <li>Risk Assessment</li>
+                    </ul>
+                    <a href="contact.html" style="background: #000; color: white; padding: 12px 24px; border-radius: 8px; text-decoration: none; font-weight: 500;">Learn More</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="process-section" style="padding: 80px 0; background: var(--bg-light);">
+        <div class="container">
+            <div class="section-header">
+                <h2>Our Process</h2>
+                <p>A simple, transparent approach to real estate</p>
+            </div>
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem;">
+                <div style="text-align: center; padding: 2rem; background: var(--bg-white); border-radius: 12px; border: 1px solid var(--border-light);">
+                    <div style="width: 60px; height: 60px; background: var(--text-dark); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 1rem; color: white; font-size: 1.5rem; font-weight: 700;">1</div>
+                    <h4 style="color: var(--text-dark); margin-bottom: 1rem;">Initial Consultation</h4>
+                    <p style="color: var(--text-light); font-size: 0.9rem;">We discuss your needs, budget, and timeline to create a personalized strategy.</p>
+                </div>
+                <div style="text-align: center; padding: 2rem; background: var(--bg-white); border-radius: 12px; border: 1px solid var(--border-light);">
+                    <div style="width: 60px; height: 60px; background: #000; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 1rem; color: white; font-size: 1.5rem; font-weight: 700;">2</div>
+                    <h4 style="color: var(--text-dark); margin-bottom: 1rem;">Market Research</h4>
+                    <p style="color: var(--text-light); font-size: 0.9rem;">Comprehensive analysis of market trends and property values in your area of interest.</p>
+                </div>
+                <div style="text-align: center; padding: 2rem; background: var(--bg-white); border-radius: 12px; border: 1px solid var(--border-light);">
+                    <div style="width: 60px; height: 60px; background: #000; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 1rem; color: white; font-size: 1.5rem; font-weight: 700;">3</div>
+                    <h4 style="color: var(--text-dark); margin-bottom: 1rem;">Property Search/Marketing</h4>
+                    <p style="color: var(--text-light); font-size: 0.9rem;">Find suitable properties or create marketing campaigns to sell your property.</p>
+                </div>
+                <div style="text-align: center; padding: 2rem; background: var(--bg-white); border-radius: 12px; border: 1px solid var(--border-light);">
+                    <div style="width: 60px; height: 60px; background: #000; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 1rem; color: white; font-size: 1.5rem; font-weight: 700;">4</div>
+                    <h4 style="color: var(--text-dark); margin-bottom: 1rem;">Closing & Support</h4>
+                    <p style="color: var(--text-light); font-size: 0.9rem;">Handle all paperwork, negotiations, and provide ongoing support after the transaction.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="pricing-section" style="padding: 80px 0; background: var(--bg-white);">
+        <div class="container">
+            <div class="section-header">
+                <h2>Service Packages</h2>
+                <p>Choose the package that best fits your needs</p>
+            </div>
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; max-width: 1000px; margin: 0 auto;">
+                <div style="background: var(--bg-light); padding: 2.5rem; border-radius: 12px; text-align: center; border: 1px solid var(--border-light);">
+                    <h3 style="color: var(--text-dark); margin-bottom: 1rem;">Basic Package</h3>
+                    <div style="font-size: 2.5rem; font-weight: 700; color: var(--text-dark); margin-bottom: 1rem;">2.5%</div>
+                    <p style="color: var(--text-light); margin-bottom: 2rem;">Commission on sale price</p>
+                    <ul style="text-align: left; color: var(--text-light); margin-bottom: 2rem; list-style: none; padding: 0;">
+                        <li style="margin-bottom: 0.5rem;"><i class="fas fa-check" style="color: #5E6C5B; margin-right: 0.5rem;"></i>Property Listing</li>
+                        <li style="margin-bottom: 0.5rem;"><i class="fas fa-check" style="color: #5E6C5B; margin-right: 0.5rem;"></i>Basic Marketing</li>
+                        <li style="margin-bottom: 0.5rem;"><i class="fas fa-check" style="color: #5E6C5B; margin-right: 0.5rem;"></i>Showing Coordination</li>
+                        <li style="margin-bottom: 0.5rem;"><i class="fas fa-check" style="color: #5E6C5B; margin-right: 0.5rem;"></i>Contract Assistance</li>
+                    </ul>
+                    <a href="contact.html" style="background: var(--text-dark); color: white; padding: 12px 24px; border-radius: 8px; text-decoration: none; font-weight: 500;">Get Started</a>
+                </div>
+                <div style="background: var(--bg-white); padding: 2.5rem; border-radius: 12px; text-align: center; border: 2px solid #5E6C5B; position: relative;">
+                    <div style="position: absolute; top: -12px; left: 50%; transform: translateX(-50%); background: #5E6C5B; color: white; padding: 6px 20px; border-radius: 20px; font-size: 0.8rem; font-weight: 600;">POPULAR</div>
+                    <h3 style="color: var(--text-dark); margin-bottom: 1rem;">Premium Package</h3>
+                    <div style="font-size: 2.5rem; font-weight: 700; color: var(--text-dark); margin-bottom: 1rem;">3.5%</div>
+                    <p style="color: var(--text-light); margin-bottom: 2rem;">Commission on sale price</p>
+                    <ul style="text-align: left; color: var(--text-light); margin-bottom: 2rem; list-style: none; padding: 0;">
+                        <li style="margin-bottom: 0.5rem;"><i class="fas fa-check" style="color: #5E6C5B; margin-right: 0.5rem;"></i>Everything in Basic</li>
+                        <li style="margin-bottom: 0.5rem;"><i class="fas fa-check" style="color: #5E6C5B; margin-right: 0.5rem;"></i>Professional Photography</li>
+                        <li style="margin-bottom: 0.5rem;"><i class="fas fa-check" style="color: #5E6C5B; margin-right: 0.5rem;"></i>Premium Marketing</li>
+                        <li style="margin-bottom: 0.5rem;"><i class="fas fa-check" style="color: #5E6C5B; margin-right: 0.5rem;"></i>Staging Consultation</li>
+                        <li style="margin-bottom: 0.5rem;"><i class="fas fa-check" style="color: #5E6C5B; margin-right: 0.5rem;"></i>Market Analysis</li>
+                    </ul>
+                    <a href="contact.html" style="background: #5E6C5B; color: white; padding: 12px 24px; border-radius: 8px; text-decoration: none; font-weight: 500;">Get Started</a>
+                </div>
+                <div style="background: var(--bg-light); padding: 2.5rem; border-radius: 12px; text-align: center; border: 1px solid var(--border-light);">
+                    <h3 style="color: var(--text-dark); margin-bottom: 1rem;">Luxury Package</h3>
+                    <div style="font-size: 2.5rem; font-weight: 700; color: var(--text-dark); margin-bottom: 1rem;">5%</div>
+                    <p style="color: var(--text-light); margin-bottom: 2rem;">Commission on sale price</p>
+                    <ul style="text-align: left; color: var(--text-light); margin-bottom: 2rem; list-style: none; padding: 0;">
+                        <li style="margin-bottom: 0.5rem;"><i class="fas fa-check" style="color: #5E6C5B; margin-right: 0.5rem;"></i>Everything in Premium</li>
+                        <li style="margin-bottom: 0.5rem;"><i class="fas fa-check" style="color: #5E6C5B; margin-right: 0.5rem;"></i>Virtual Tours</li>
+                        <li style="margin-bottom: 0.5rem;"><i class="fas fa-check" style="color: #5E6C5B; margin-right: 0.5rem;"></i>Luxury Marketing</li>
+                        <li style="margin-bottom: 0.5rem;"><i class="fas fa-check" style="color: #5E6C5B; margin-right: 0.5rem;"></i>Concierge Service</li>
+                        <li style="margin-bottom: 0.5rem;"><i class="fas fa-check" style="color: #5E6C5B; margin-right: 0.5rem;"></i>Personal Consultant</li>
+                    </ul>
+                    <a href="contact.html" style="background: var(--text-dark); color: white; padding: 12px 24px; border-radius: 8px; text-decoration: none; font-weight: 500;">Get Started</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="cta-section" style="padding: 80px 0; background: var(--text-dark); text-align: center;">
+        <div class="container">
+            <h2 style="color: white; margin-bottom: 1rem;">Ready to Get Started?</h2>
+            <p style="color: #cccccc; font-size: 1.1rem; margin-bottom: 2rem; max-width: 600px; margin-left: auto; margin-right: auto;">Contact us today for a free consultation and let us help you achieve your real estate goals.</p>
+            <a href="contact.html" style="background: #5E6C5B; color: white; padding: 16px 32px; border-radius: 8px; text-decoration: none; font-weight: 500; font-size: 1.1rem; transition: var(--transition);">
+                <i class="fas fa-phone"></i> Contact Us Today
+            </a>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>HOMELO</h3>
+                    <p>Your trusted partner in finding the perfect home.</p>
+                    <div class="social-links">
+                        <a href="404.html"><i class="fab fa-facebook"></i></a>
+                        <a href="404.html"><i class="fab fa-instagram"></i></a>
+                        <a href="404.html"><i class="fab fa-twitter"></i></a>
+                        <a href="404.html"><i class="fab fa-linkedin"></i></a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="properties.html">Properties</a></li>
+                        <li><a href="services.html">Services</a></li>
+                        <li><a href="agents.html">Agents</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Services</h4>
+                    <ul>
+                        <li><a href="services.html">Property Sales</a></li>
+                        <li><a href="services.html">Property Rental</a></li>
+                        <li><a href="services.html">Property Valuation</a></li>
+                        <li><a href="services.html">Investment Consulting</a></li>
+                        <li><a href="services.html">Property Management</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Contact Info</h4>
+                    <ul>
+                        <li><i class="fas fa-map-marker-alt"></i> 123 Property Street, Bucharest</li>
+                        <li><i class="fas fa-phone"></i> +40 123 456 789</li>
+                        <li><i class="fas fa-envelope"></i> contact@homelo.com</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 HOMELO. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <div class="favorites-sidebar" id="favoritesSidebar">
+        <div class="sidebar-header">
+            <h3>Favorite Properties</h3>
+            <button class="close-sidebar" onclick="toggleSidebar('favorites')">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+        <div class="favorites-items" id="favoritesItems">
+        </div>
+        <div class="sidebar-footer">
+            <div class="favorites-total">
+                <h4>Total Value: <span id="favoritesTotal">€0</span></h4>
+            </div>
+            <button class="contact-agent-btn" onclick="contactAboutFavorites()">
+                Contact Agent
+            </button>
+        </div>
+    </div>
+
+    <div class="shopping-cart-sidebar" id="shoppingCartSidebar">
+        <div class="sidebar-header">
+            <h3>Shopping Cart</h3>
+            <button class="close-sidebar" onclick="toggleSidebar('cart')">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+        <div class="shopping-items" id="shoppingItems">
+        </div>
+        <div class="sidebar-footer">
+            <div class="shopping-total">
+                <h4>Total Value: <span id="shoppingTotal">€0</span></h4>
+            </div>
+            <button class="checkout-btn" onclick="proceedToCheckout()">
+                <i class="fas fa-credit-card"></i> Proceed to Checkout
+            </button>
+        </div>
+    </div>
+
+    <script src="properties.js"></script>
+    <script src="script.js"></script>
+</body>
+</html> 

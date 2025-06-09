@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Properties - HOMELO Real Estate</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <a href="index.html"><img src="https://ik.imagekit.io/6ghr1qaq4q/Imagini/logo-hero-mainasd.png?updatedAt=1749339655513" alt="HOMELO Logo" style="height: 36px;"></a>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="index.html" class="nav-link">Home</a></li>
+                <li><a href="properties.html" class="nav-link active">Properties</a></li>
+                <li><a href="about.html" class="nav-link">About</a></li>
+                <li><a href="services.html" class="nav-link">Services</a></li>
+                <li><a href="agents.html" class="nav-link">Agents</a></li>
+                <li><a href="contact.html" class="nav-link">Contact</a></li>
+                <li><a href="#" class="cart-btn favorites-btn" onclick="toggleSidebar('favorites')">
+                    <i class="fas fa-heart"></i>
+                    <span class="cart-count" id="favoritesCount">0</span>
+                </a></li>
+                <li><a href="#" class="cart-btn shopping-cart-btn" onclick="toggleSidebar('cart')">
+                    <i class="fas fa-shopping-cart"></i>
+                    <span class="cart-count" id="cartCount">0</span>
+                </a></li>
+            </ul>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <section class="page-header" style="margin-top: 80px; padding: 60px 0; background: var(--bg-light); text-align: center;">
+        <div class="container">
+            <h1 style="font-size: 3rem; margin-bottom: 1rem; color: var(--text-dark);">Our Properties</h1>
+            <p style="font-size: 1.2rem; color: var(--text-light); max-width: 600px; margin: 0 auto;">Discover your perfect home from our exclusive collection of premium properties</p>
+        </div>
+    </section>
+
+    <section class="advanced-search" style="padding: 40px 0; background: var(--bg-white); border-bottom: 1px ">
+        <div class="container">
+            <div class="search-bar" style="max-width: 1000px; margin: 0 auto;">
+                <div class="search-group">
+                    <label>Location</label>
+                    <input type="text" placeholder="Enter location..." id="searchInput">
+                </div>
+                <div class="search-group">
+                    <label>Type</label>
+                    <select id="typeFilter">
+                        <option value="all">All Types</option>
+                        <option value="villa">Villa</option>
+                        <option value="apartment">Apartment</option>
+                        <option value="house">House</option>
+                        <option value="penthouse">Penthouse</option>
+                        <option value="studio">Studio</option>
+                    </select>
+                </div>
+                <div class="search-group">
+                    <label>Price Range</label>
+                    <select id="priceFilter">
+                        <option value="all">All Prices</option>
+                        <option value="0-200000">€0 - €200,000</option>
+                        <option value="200000-500000">€200,000 - €500,000</option>
+                        <option value="500000-1000000">€500,000 - €1M</option>
+                        <option value="1000000+">€1M+</option>
+                    </select>
+                </div>
+                <button class="search-btn" onclick="performSearch()">
+                    <i class="fas fa-search"></i>
+                    Search
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <section class="properties-section" style="padding: 80px 0; background: var(--bg-white);">
+        <div class="container">
+            <div class="section-header">
+                <h2>All Properties</h2>
+                <div class="filter-controls">
+                    <div class="filter-buttons">
+                        <button class="filter-btn active" onclick="filterProperties('all')">All</button>
+                        <button class="filter-btn" onclick="filterProperties('villa')">Villas</button>
+                        <button class="filter-btn" onclick="filterProperties('apartment')">Apartments</button>
+                        <button class="filter-btn" onclick="filterProperties('house')">Houses</button>
+                        <button class="filter-btn" onclick="filterProperties('penthouse')">Penthouses</button>
+                        <button class="filter-btn" onclick="filterProperties('studio')">Studios</button>
+                    </div>
+                    <div class="sort-controls">
+                        <select id="sortProperties">
+                            <option value="price-asc">Price: Low to High</option>
+                            <option value="price-desc">Price: High to Low</option>
+                            <option value="area-desc">Area: Largest First</option>
+                            <option value="year-desc">Newest First</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+            <div class="properties-grid" id="propertiesGrid">
+            </div>
+            <div class="load-more-container">
+                <button class="load-more-btn" id="loadMoreBtn">Load More Properties</button>
+            </div>
+        </div>
+    </section>
+
+    <section class="featured-section" style="padding: 80px 0; background: var(--bg-light);">
+        <div class="container">
+            <div class="section-header">
+                <h2>Featured Properties</h2>
+                <p>Handpicked properties that offer exceptional value</p>
+            </div>
+            <div class="featured-grid" id="featuredGrid">
+            </div>
+        </div>
+    </section>
+
+    <section class="stats-section" style="padding: 60px 0; background: var(--bg-light);">
+        <div class="container">
+            <div class="stats-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 2rem; text-align: center;">
+                <div class="stat-item">
+                    <h3 style="font-size: 2.5rem; color: var(--text-dark); margin-bottom: 0.5rem;">12</h3>
+                    <p style="color: var(--text-light);">Total Properties</p>
+                </div>
+                <div class="stat-item">
+                    <h3 style="font-size: 2.5rem; color: var(--text-dark); margin-bottom: 0.5rem;">5</h3>
+                    <p style="color: var(--text-light);">Property Types</p>
+                </div>
+                <div class="stat-item">
+                    <h3 style="font-size: 2.5rem; color: var(--text-dark); margin-bottom: 0.5rem;">€150K-€2M</h3>
+                    <p style="color: var(--text-light);">Price Range</p>
+                </div>
+                <div class="stat-item">
+                    <h3 style="font-size: 2.5rem; color: var(--text-dark); margin-bottom: 0.5rem;">8</h3>
+                    <p style="color: var(--text-light);">Locations</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>HOMELO</h3>
+                    <p>Your trusted partner in finding the perfect home.</p>
+                    <div class="social-links">
+                        <a href="404.html"><i class="fab fa-facebook"></i></a>
+                        <a href="404.html"><i class="fab fa-instagram"></i></a>
+                        <a href="404.html"><i class="fab fa-twitter"></i></a>
+                        <a href="404.html"><i class="fab fa-linkedin"></i></a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="properties.html">Properties</a></li>
+                        <li><a href="services.html">Services</a></li>
+                        <li><a href="agents.html">Agents</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Services</h4>
+                    <ul>
+                        <li><a href="services.html">Property Sales</a></li>
+                        <li><a href="services.html">Property Rental</a></li>
+                        <li><a href="services.html">Property Valuation</a></li>
+                        <li><a href="services.html">Investment Consulting</a></li>
+                        <li><a href="services.html">Property Management</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Contact Info</h4>
+                    <ul>
+                        <li><i class="fas fa-map-marker-alt"></i> 123 Property Street, Bucharest</li>
+                        <li><i class="fas fa-phone"></i> +40 123 456 789</li>
+                        <li><i class="fas fa-envelope"></i> contact@homelo.com</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 HOMELO. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <div class="favorites-sidebar" id="favoritesSidebar">
+        <div class="sidebar-header">
+            <h3>Favorite Properties</h3>
+            <button class="close-sidebar" onclick="toggleSidebar('favorites')">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+        <div class="favorites-items" id="favoritesItems">
+        </div>
+        <div class="sidebar-footer">
+            <div class="favorites-total">
+                <h4>Total Value: <span id="favoritesTotal">€0</span></h4>
+            </div>
+            <button class="contact-agent-btn" onclick="contactAboutFavorites()">
+                Contact Agent
+            </button>
+        </div>
+    </div>
+
+    <div class="shopping-cart-sidebar" id="shoppingCartSidebar">
+        <div class="sidebar-header">
+            <h3>Shopping Cart</h3>
+            <button class="close-sidebar" onclick="toggleSidebar('cart')">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+        <div class="shopping-items" id="shoppingItems">
+        </div>
+        <div class="sidebar-footer">
+            <div class="shopping-total">
+                <h4>Total Value: <span id="shoppingTotal">€0</span></h4>
+            </div>
+            <button class="checkout-btn" onclick="proceedToCheckout()">
+                <i class="fas fa-credit-card"></i> Proceed to Checkout
+            </button>
+        </div>
+    </div>
+
+    <div class="modal" id="propertyModal">
+        <div class="modal-content">
+            <span class="close-modal" onclick="closeModal()">&times;</span>
+            <div id="modalContent">
+            </div>
+        </div>
+    </div>
+
+    <script src="properties.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
